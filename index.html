@@ -712,6 +712,41 @@ section { padding: 100px 5%; }
 .project-card:hover .project-overlay h3 { transform: translateY(0); }
 .project-overlay span { color: var(--gold-light); font-size: 0.78rem; margin-top: 4px; display: block; }
 
+/* ===== FOUNDER / LEGACY ===== */
+#founder { background: var(--bg3); }
+.founder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 48px; }
+.founder-card {
+  background: var(--bg2); border-radius: 22px;
+  padding: 32px 28px; border: 1px solid var(--border);
+  transition: var(--transition); position: relative; overflow: hidden; text-align: left;
+}
+.founder-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+  transform: scaleX(0); transform-origin: left; transition: var(--transition);
+}
+.founder-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.founder-card:hover::before { transform: scaleX(1); }
+.founder-avatar {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(212,80,10,0.3); margin-bottom: 16px;
+}
+.founder-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+.founder-role {
+  display: inline-block; font-size: 0.76rem; font-weight: 700;
+  color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.founder-card p { font-size: 0.87rem; color: var(--text2); line-height: 1.7; }
+.founder-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.founder-tag {
+  font-size: 0.72rem; font-weight: 700; padding: 4px 10px;
+  border-radius: 99px; background: rgba(212,80,10,0.1); color: var(--primary);
+}
+
 /* ===== TRUST ===== */
 #trust { background: var(--bg3); }
 .trust-header { text-align: center; margin-bottom: 60px; }
@@ -1021,6 +1056,7 @@ footer::before {
   <a href="#about" onclick="closeMobileNav()" data-i18n="nav_about">About</a>
   <a href="#services" onclick="closeMobileNav()" data-i18n="nav_services">Services</a>
   <a href="#projects" onclick="closeMobileNav()" data-i18n="nav_projects">Projects</a>
+  <a href="#founder" onclick="closeMobileNav()" data-i18n="nav_founder">Founder</a>
   <a href="#trust" onclick="closeMobileNav()" data-i18n="nav_reviews">Reviews</a>
   <a href="#contact" onclick="closeMobileNav()" data-i18n="nav_contact">Contact</a>
   <div class="mobile-lang">
@@ -1218,6 +1254,43 @@ footer::before {
   </div>
 </section>
 
+<!-- FOUNDER & LEGACY -->
+<section id="founder">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:16px" data-aos="fade-up">
+      <div class="section-label" style="justify-content:center" data-i18n="founder_label">Leadership & Legacy</div>
+      <h2 class="section-title" data-i18n="founder_title">Founder <span>& Family Legacy</span></h2>
+      <p class="section-desc" style="margin:0 auto" data-i18n="founder_desc">The people who built PS Construction, and the next generation carrying it forward.</p>
+    </div>
+    <div class="founder-grid">
+      <article class="founder-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="founder-avatar">PS</div>
+        <h3 data-i18n="founder1_name">Pradeep Sharma</h3>
+        <span class="founder-role" data-i18n="founder1_role">Founder & Owner, PS Construction</span>
+        <p data-i18n="founder1_bio">Pradeep Sharma is the Founder and Owner of PS Construction. He established the company and continues to lead and manage its operations.</p>
+      </article>
+      <article class="founder-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="founder-avatar">SS</div>
+        <h3 data-i18n="founder2_name">Shishupal Sharma</h3>
+        <span class="founder-role" data-i18n="founder2_role">Founder Background</span>
+        <p data-i18n="founder2_bio">Pradeep Sharma, Founder and Owner of PS Construction, comes from the Sharma family. His father was Shishupal Sharma.</p>
+      </article>
+      <article class="founder-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="founder-avatar">AS</div>
+        <h3 data-i18n="founder3_name">Ayush Sharma</h3>
+        <span class="founder-role" data-i18n="founder3_role">Next Generation</span>
+        <p data-i18n="founder3_bio">Ayush Sharma is the son of Pradeep Sharma. He is pursuing a B.Tech in Computer Science and Engineering at Invertis University, Bareilly, with interests in cybersecurity, web development, artificial intelligence, and IoT.</p>
+        <div class="founder-tags">
+          <span class="founder-tag">Cybersecurity</span>
+          <span class="founder-tag">Web Development</span>
+          <span class="founder-tag">Artificial Intelligence</span>
+          <span class="founder-tag">IoT</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST -->
 <section id="trust">
   <div class="container">
@@ -1357,6 +1430,7 @@ footer::before {
           <li><a href="#about" data-i18n="nav_about">About Us</a></li>
           <li><a href="#services" data-i18n="nav_services">Services</a></li>
           <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#founder" data-i18n="nav_founder">Founder</a></li>
           <li><a href="#trust" data-i18n="nav_reviews">Reviews</a></li>
           <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         </ul>
@@ -1398,6 +1472,7 @@ footer::before {
 const translations = {
   en: {
     nav_home:'Home', nav_about:'About', nav_services:'Services', nav_projects:'Projects',
+    nav_founder:'Founder',
     nav_reviews:'Reviews', nav_contact:'Contact', nav_login:'Login',
     hero_title:'Building <span class="accent">Strong Foundations</span><br>With Trusted Labour & Expertise',
     hero_sub:'We provide reliable construction services and skilled labour across Gurgaon & Haryana. From small projects to large-scale developments — quality, speed, and trust.',
@@ -1421,6 +1496,15 @@ const translations = {
     s6_h:'Electrical & Plumbing', s6_p:'Certified electricians and plumbers for residential and commercial projects.',
     learn_more:'Learn More',
     proj_label:'Our Work', proj_desc:'From luxury villas to industrial warehouses — our portfolio speaks for itself.',
+    founder_label:'Leadership & Legacy',
+    founder_title:'Founder <span>& Family Legacy</span>',
+    founder_desc:'The people who built PS Construction, and the next generation carrying it forward.',
+    founder1_name:'Pradeep Sharma', founder1_role:'Founder & Owner, PS Construction',
+    founder1_bio:'Pradeep Sharma is the Founder and Owner of PS Construction. He established the company and continues to lead and manage its operations.',
+    founder2_name:'Shishupal Sharma', founder2_role:'Founder Background',
+    founder2_bio:'Pradeep Sharma, Founder and Owner of PS Construction, comes from the Sharma family. His father was Shishupal Sharma.',
+    founder3_name:'Ayush Sharma', founder3_role:'Next Generation',
+    founder3_bio:'Ayush Sharma is the son of Pradeep Sharma. He is pursuing a B.Tech in Computer Science and Engineering at Invertis University, Bareilly, with interests in cybersecurity, web development, artificial intelligence, and IoT.',
     trust_label:'Client Stories', trust_desc:"Our clients' success stories speak louder than anything we can say.",
     t1:'PS Construction completed our 40,000 sq ft commercial project on time and within budget.',
     t2:'60 skilled workers, all verified, all punctual. Their attendance and payment system is very professional.',
@@ -1442,6 +1526,7 @@ const translations = {
   },
   hi: {
     nav_home:'होम', nav_about:'हमारे बारे में', nav_services:'सेवाएं', nav_projects:'प्रोजेक्ट',
+    nav_founder:'संस्थापक',
     nav_reviews:'समीक्षाएं', nav_contact:'संपर्क', nav_login:'लॉगिन',
     hero_title:'<span class="accent">मजबूत नींव</span> बनाना<br>विश्वसनीय श्रम और विशेषज्ञता के साथ',
     hero_sub:'हम गुरुग्राम और हरियाणा में विश्वसनीय निर्माण सेवाएं और कुशल श्रमिक प्रदान करते हैं। छोटे से बड़े प्रोजेक्ट तक — गुणवत्ता, गति और विश्वास।',
@@ -1465,6 +1550,15 @@ const translations = {
     s6_h:'इलेक्ट्रिकल और प्लंबिंग', s6_p:'आवासीय और वाणिज्यिक परियोजनाओं के लिए प्रमाणित इलेक्ट्रीशियन और प्लंबर।',
     learn_more:'और जानें',
     proj_label:'हमारा काम', proj_desc:'लग्जरी विला से औद्योगिक गोदाम तक — हमारा पोर्टफोलियो खुद बोलता है।',
+    founder_label:'नेतृत्व और विरासत',
+    founder_title:'संस्थापक <span>और पारिवारिक विरासत</span>',
+    founder_desc:'PS कंस्ट्रक्शन बनाने वाले लोग, और इसे आगे ले जाने वाली अगली पीढ़ी।',
+    founder1_name:'प्रदीप शर्मा', founder1_role:'संस्थापक और मालिक, PS कंस्ट्रक्शन',
+    founder1_bio:'प्रदीप शर्मा PS कंस्ट्रक्शन के संस्थापक और मालिक हैं। उन्होंने कंपनी की स्थापना की और आज भी इसका संचालन करते हैं।',
+    founder2_name:'शिशुपाल शर्मा', founder2_role:'पारिवारिक पृष्ठभूमि',
+    founder2_bio:'प्रदीप शर्मा, PS कंस्ट्रक्शन के संस्थापक और मालिक, शर्मा परिवार से हैं। उनके पिता का नाम शिशुपाल शर्मा है।',
+    founder3_name:'आयुष शर्मा', founder3_role:'अगली पीढ़ी',
+    founder3_bio:'आयुष शर्मा प्रदीप शर्मा के पुत्र हैं। वे इनवर्टिस यूनिवर्सिटी, बरेली से कंप्यूटर साइंस एंड इंजीनियरिंग में बी.टेक कर रहे हैं, जिनकी रुचि साइबर सुरक्षा, वेब डेवलपमेंट, आर्टिफिशियल इंटेलिजेंस और IoT में है।',
     trust_label:'ग्राहक की कहानियां', trust_desc:'हमारे ग्राहकों की सफलता की कहानियां हमारे बारे में सब कुछ कहती हैं।',
     t1:'PS कंस्ट्रक्शन ने हमारा 40,000 वर्ग फुट का वाणिज्यिक प्रोजेक्ट समय पर और बजट के भीतर पूरा किया।',
     t2:'60 कुशल श्रमिक, सभी सत्यापित, सभी समयनिष्ठ। उनकी उपस्थिति और भुगतान प्रणाली बहुत पेशेवर है।',
@@ -1486,6 +1580,7 @@ const translations = {
   },
   hl: {
     nav_home:'Home', nav_about:'Hamare Baare Mein', nav_services:'Sevayen', nav_projects:'Projects',
+    nav_founder:'Founder',
     nav_reviews:'Reviews', nav_contact:'Contact Karo', nav_login:'Login',
     hero_title:'<span class="accent">Mazboot Neev</span> Banana<br>Vishwasaniya Mazdoor aur Expertise ke Saath',
     hero_sub:'Hum Gurgaon aur Haryana mein reliable construction services aur skilled labour provide karte hain. Chote se bade project tak — quality, speed aur trust.',
@@ -1509,6 +1604,15 @@ const translations = {
     s6_h:'Electrical & Plumbing', s6_p:'Residential aur commercial projects ke liye certified electrician aur plumber.',
     learn_more:'Aur Janiye',
     proj_label:'Hamara Kaam', proj_desc:'Luxury villa se industrial warehouse tak — portfolio khud bolta hai.',
+    founder_label:'Leadership aur Legacy',
+    founder_title:'Founder <span>aur Family Legacy</span>',
+    founder_desc:'Wo log jinhone PS Construction banaya, aur agli generation jo ise aage badha rahi hai.',
+    founder1_name:'Pradeep Sharma', founder1_role:'Founder aur Owner, PS Construction',
+    founder1_bio:'Pradeep Sharma PS Construction ke Founder aur Owner hain. Unhone company shuru ki aur aaj bhi iska operation lead karte hain.',
+    founder2_name:'Shishupal Sharma', founder2_role:'Founder Background',
+    founder2_bio:'Pradeep Sharma, PS Construction ke Founder aur Owner, Sharma family se hain. Unke pita ka naam Shishupal Sharma hai.',
+    founder3_name:'Ayush Sharma', founder3_role:'Next Generation',
+    founder3_bio:'Ayush Sharma, Pradeep Sharma ke bete hain. Wo Invertis University, Bareilly se Computer Science and Engineering mein B.Tech kar rahe hain, jinki interest Cybersecurity, Web Development, Artificial Intelligence aur IoT mein hai.',
     trust_label:'Client Ki Baatein', trust_desc:'Hamare clients ki success stories hi humara asli pehchaan hai.',
     t1:'PS Construction ne hamaara 40,000 sq ft commercial project time pe aur budget mein complete kiya.',
     t2:'60 skilled mazdoor, sab verified, sab punctual. Unka attendance aur payment system bahut professional hai.',
@@ -1700,6 +1804,68 @@ document.querySelectorAll('.service-card').forEach(card=>{
   });
   card.addEventListener('mouseleave',()=>{ card.style.transform=''; });
 });
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     SEO: FOUNDER & FAMILY STRUCTURED DATA
+     Person / Organization graph — added, does not
+     replace the LocalBusiness / BreadcrumbList schema above
+═══════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://psconstructiongurugram.vercel.app/#pradeep-sharma",
+      "name": "Pradeep Sharma",
+      "jobTitle": "Founder & Owner",
+      "worksFor": { "@id": "https://psconstructiongurugram.vercel.app/#business" },
+      "parent": { "@id": "https://psconstructiongurugram.vercel.app/#shishupal-sharma" },
+      "children": [{ "@id": "https://psconstructiongurugram.vercel.app/#ayush-sharma" }],
+      "sameAs": [
+        "https://www.facebook.com/share/1Cg99BvL5H/",
+        "https://www.instagram.com/pradeepsharma2819"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://psconstructiongurugram.vercel.app/#shishupal-sharma",
+      "name": "Shishupal Sharma",
+      "children": [{ "@id": "https://psconstructiongurugram.vercel.app/#pradeep-sharma" }]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://psconstructiongurugram.vercel.app/#ayush-sharma",
+      "name": "Ayush Sharma",
+      "parent": { "@id": "https://psconstructiongurugram.vercel.app/#pradeep-sharma" },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Invertis University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bareilly",
+          "addressRegion": "Uttar Pradesh",
+          "addressCountry": "IN"
+        }
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "B.Tech",
+        "about": "Computer Science and Engineering"
+      },
+      "knowsAbout": ["Cybersecurity", "Web Development", "Artificial Intelligence", "Internet of Things (IoT)", "Secure Technology"]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://psconstructiongurugram.vercel.app/#business",
+  "founder": { "@id": "https://psconstructiongurugram.vercel.app/#pradeep-sharma" }
+}
 </script>
 <!-- PWA Install Button (shown when installable) -->
 <div id="pwaInstallBar" style="display:none;position:fixed;bottom:90px;right:24px;z-index:9995;
